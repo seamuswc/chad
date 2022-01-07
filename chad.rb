@@ -48,6 +48,7 @@ def parse()
     
     data = api()
     data.each do |x|   
+        next unless x["asset_contract"]["asset_contract_type"]["non-fungible"]
         next if x["last_sale"].nil?  
         slug =  x["collection"]["slug"] 
         floor = get_floor(slug)
@@ -84,6 +85,9 @@ def mints()
     
     data = api_mints()
     data.each do |x|   
+
+        next unless x["asset_contract"]["asset_contract_type"]["non-fungible"]
+
         slug =  x["collection"]["slug"] 
         floor = get_floor(slug)
 
