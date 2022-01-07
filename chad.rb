@@ -56,6 +56,8 @@ def parse()
         puts "#{x["asset_contract"]["name"]} was purchased for #{last_price} and has a current floor price of #{floor} ETH"  
         $total_floor += floor
         $total_paid += last_price 
+        $total_nfts +=1
+
     end
 
 end
@@ -95,6 +97,7 @@ def mints()
             puts "#{x["asset_contract"]["name"]} was Minted and has a current floor price of #{floor} ETH"  
         end
         $total_floor += floor
+        $total_nfts +=1
 
     end
 
@@ -102,6 +105,7 @@ end
 
 $total_floor = 0
 $total_paid = 0
+$total_nfts = 0
 
 puts "Enter address\n"
 $wallet = gets.chomp
@@ -109,4 +113,8 @@ $wallet = gets.chomp
 parse()
 mints()
 
-puts "This wallet spend a total of #{$total_paid} and is worth a total of #{$total_floor} on NFT's currently in the wallet"
+puts
+puts "This wallet spent a total of #{$total_paid} ETH on the NFT's inside it and has a total NFT worth of #{$total_floor} ETH"
+puts
+puts "This program found #{$total_nfts} NFTS, the max is 100. There might be more if you hit 100!"
+puts
