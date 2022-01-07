@@ -5,9 +5,6 @@ require 'json'
 
 def api()
 
-    
-    #url = URI("https://api.opensea.io/api/v1/assets?owner=0xBbcFa939071D2A0BF64D8E15a715C0BE73735503&limit=50&order_by=sale_price&order_direction=desc")
-
     url = URI("https://api.opensea.io/api/v1/assets?owner=#{$wallet}&limit=50&order_by=sale_price&order_direction=desc")
 
     http = Net::HTTP.new(url.host, url.port)
