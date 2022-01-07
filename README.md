@@ -10,12 +10,12 @@
   8) **Type:** ruby chad.rb
 
 ## ISSUES
-  1) Opensea limites 50 assets per API call, so not accurate with larger wallets,
-  beacuse of this limitation it makes two seperate api calls and combines them. One sorts by Sale_Price DESC and the other by Sale_Count ASC. These combine to give semi accurate picture of the accounts holdings.
-  2) MINTED assets, assets that are minted but NOT UNIQUE are currently being listed as PURCHASES.
-  3) 1 Wallet address per time. We can make it loop through a txt.file of address though.
-  4) **ctrl c** will exit the program at any time.
+  1) Opensea limits 50 assets per API call, so not accurate with larger wallets.
+  Beacuse of this limitation the program makes two seperate api calls and combines them. One sorts by **Sale_Price DESC** and the other by **Sale_Count ASC**. These combine and cross cancel to give and accurate picture of the accounts holdings. **Sale_Price DESC** was used to hit big purchases and **Sale_Count ASC** was used to hit mints.
 
+## MINTING ISSUES
+  1) Assets that are minted but NOT UNIQUE are currently being listed as PURCHASES.
+  2) Assets that are transfered are being listed as MINTED 
 
 ### Notes
 This assumes ruby is installed on your computer.
