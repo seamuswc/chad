@@ -10,10 +10,10 @@
   8) **Type:** ruby chad.rb
 
 ## ISSUES & NOTES
-  1) Opensea limits 50 assets per API call, so not accurate with wallets that have over 100 NFTs (Two API are made).
+  1) Opensea limits 50 assets per API call, so not accurate with wallets that have over 100 NFTs (2 API are made).
   Beacuse of this limitation the program makes two seperate api calls and combines them. One sorts by **Sale_Price DESC** and the other by **Sale_Count ASC**. These combine and cross cancel to give and accurate picture of the accounts holdings. **Sale_Price DESC** was used to hit big purchases and **Sale_Count ASC** was used to hit mints. These two seperate API calls can return a 100 NFTS in total.
-  2) This program only tracks **NON-FUNGIBLE** NFTS, so non unique NFTS will not appear. An example of these are https://opensea.io/collection/byovape.
-  This is partly because even the opensea UX has a hard time determing the floor price, and it is difficult to tell which are minted vs bought via API. These will also be common in the future as tickets to events, etc...
+  2) This program only tracks **NON-FUNGIBLE** NFTs, so non unique NFTs will not appear. An example of these are https://opensea.io/collection/byovape.
+  This is partly because even the Opensea UX has a hard time determing the floor price of these. It is difficult to tell which are minted vs bought via API. These will also be common in the future as tickets to events, etc...
   3) Assets that are **transfered** are being listed as MINTED. Should I not count transfers at all? 
 
 ### Notes
